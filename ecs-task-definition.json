@@ -51,10 +51,6 @@
   "networkMode": null,
   "runtimePlatform": null,
   "cpu": "512",
-  "revision": 4,
-  "status": "ACTIVE",
-  "inferenceAccelerators": null,
-  "proxyConfiguration": null,
   "volumes": [
     {
       "fsxWindowsFileServerVolumeConfiguration": null,
