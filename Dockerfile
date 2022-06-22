@@ -15,8 +15,8 @@ VOLUME /var/lib/jenkins
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
-  apt-add-repository ppa:ansible/ansible && \
   apt install software-properties-common -y && \
+  apt-add-repository ppa:ansible/ansible -y && \
   apt-get update && \
   apt install ansible -y
 
