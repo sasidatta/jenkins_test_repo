@@ -27,8 +27,8 @@ jobs:
     - name: Build and push image to ACR
       id: build-image
       run: |
-        docker build "$GITHUB_WORKSPACE/" -f  "Dockerfile" -t vssrepos.azurecr.io/vss:${{ github.sha }} --label dockerfile-path=Dockerfile
-        docker push vssrepos.azurecr.io/vss:${{ github.sha }}
+        docker build "$GITHUB_WORKSPACE/" -f  "Dockerfile" -t vssrepos.azurecr.io/jenkins:${{ github.sha }} --label dockerfile-path=Dockerfile
+        docker push vssrepos.azurecr.io/jenkins:${{ github.sha }}
     
     - uses: azure/k8s-set-context@v1
       id: login
@@ -58,6 +58,6 @@ jobs:
           manifests/deployment.yml
           manifests/service.yml
         images: |
-          vssrepos.azurecr.io/vss:${{ github.sha }}
+          vssrepos.azurecr.io/jenkins:${{ github.sha }}
         imagepullsecrets: |
           vssdockerauth   

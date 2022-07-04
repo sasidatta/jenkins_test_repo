@@ -1,19 +1,19 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: "vss-fc8a"
+  name: "jenkins"
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: "vss-fc8a"
+      app: "jenkins-app"
   template:
     metadata:
       labels:
-        app: "vss-fc8a"
+        app: "jenkins-app"
     spec:
       containers:
-        - name: "vss-fc8a"
+        - name: "jenkins"
           image: "vssrepos.azurecr.io/vss"
           ports:
           - containerPort: 8080
