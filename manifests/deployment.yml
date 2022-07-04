@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "vss-fc8a"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "vss-fc8a"
+  template:
+    metadata:
+      labels:
+        app: "vss-fc8a"
+    spec:
+      containers:
+        - name: "vss-fc8a"
+          image: "vssrepos.azurecr.io/vss"
+          ports:
+          - containerPort: 8080
